@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🔥 ChismeLatino VIP - Chismes y Escándalos de Famosos</title>
     <meta name="description" content="Los chismes más HOT de celebridades latinas. Escándalos, romances secretos, fotos filtradas y drama en tiempo real. ¡No te pierdas nada!">
+    
+    <!-- Script de publicidad implementado correctamente -->
+    <script src="https://fpyf8.com/88/tag.min.js" data-zone="160075" async data-cfasync="false"></script>
+    
     <style>
         * {
             margin: 0;
@@ -51,6 +55,17 @@
             max-width: 728px;
             margin: 0 auto;
             animation: neonGlow 2s infinite alternate;
+        }
+
+        /* Contenedor específico para ads del script */
+        .ad-container {
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            margin: 10px 0;
         }
 
         @keyframes neonGlow {
@@ -577,8 +592,12 @@
     <!-- Header with Top Banner -->
     <header class="header">
         <div class="banner-top">
-            <div class="banner-placeholder">
-                💎 ESPACIO BANNER 728x90 - ADSTERRA PREMIUM AD
+            <!-- Aquí se mostrará el contenido del script de publicidad -->
+            <div class="ad-container" id="ad-zone-header">
+                <!-- Fallback banner si los ads no cargan -->
+                <div class="banner-placeholder">
+                    💎 ESPACIO BANNER 728x90 - CARGANDO PUBLICIDAD...
+                </div>
             </div>
         </div>
         <nav class="nav-container">
@@ -629,6 +648,13 @@
                 <p style="font-style: italic; opacity: 0.9;">👆 VOTA y descubre los resultados EXCLUSIVOS</p>
             </section>
 
+            <!-- Espacio adicional para ads del script -->
+            <div class="native-ad">
+                <div id="ad-zone-content">
+                    💄 NATIVE AD: Apps de belleza y dating para latinos
+                </div>
+            </div>
+
             <!-- Content Gate -->
             <div class="content-gate">
                 <h2 class="gate-title">🚫 CONTENIDO CENSURADO 🚫</h2>
@@ -641,11 +667,6 @@
                     <em>Contenido solo para mayores de edad</em>
                 </p>
                 <button class="unlock-btn" onclick="unlockCensored()">VER FOTOS CENSURADAS</button>
-            </div>
-
-            <!-- Native Ad Space -->
-            <div class="native-ad">
-                💄 NATIVE AD: Apps de belleza y dating para latinos
             </div>
 
             <!-- Viral Content Grid -->
@@ -741,9 +762,11 @@
                 </article>
             </div>
 
-            <!-- Native Ad Space -->
+            <!-- Espacio adicional para ads -->
             <div class="native-ad">
-                📱 NATIVE AD: Descarga apps de chismes y dating
+                <div id="ad-zone-bottom">
+                    📱 NATIVE AD: Descarga apps de chismes y dating
+                </div>
             </div>
         </main>
 
@@ -751,8 +774,10 @@
         <aside class="sidebar">
             <!-- Banner 300x250 -->
             <div class="sidebar-widget">
-                <div class="banner-sidebar">
-                    💄 BANNER 300x250<br>ADSTERRA PREMIUM
+                <div class="ad-container" id="ad-zone-sidebar">
+                    <div class="banner-sidebar">
+                        💄 BANNER 300x250<br>CARGANDO ANUNCIOS...
+                    </div>
                 </div>
             </div>
 
@@ -796,283 +821,4 @@
             </div>
 
             <!-- Native Ad Widget -->
-            <div class="sidebar-widget">
-                <h3 class="widget-title">💕 Para Ti</h3>
-                <div class="native-ad">
-                    NATIVE AD<br>
-                    Dating Apps Latino
-                </div>
-            </div>
-
-            <!-- Quick Polls -->
-            <div class="sidebar-widget">
-                <h3 class="widget-title">🗳 Vota Rápido</h3>
-                <div onclick="quickPoll('team')" style="background: linear-gradient(45deg, #ff4081, #ff6ec7); color: white; padding: 15px; border-radius: 10px; cursor: pointer; margin-bottom: 10px; text-align: center; font-weight: bold;">
-                    ¿Team Shakira o Team Piqué?
-                </div>
-                <div onclick="quickPoll('couple')" style="background: linear-gradient(45deg, #e91e63, #ad1457); color: white; padding: 15px; border-radius: 10px; cursor: pointer; text-align: center; font-weight: bold;">
-                    ¿Mejor pareja latina 2025?
-                </div>
-            </div>
-        </aside>
-    </div>
-
-    <!-- Social Bar (Fixed Bottom) -->
-    <div class="social-bar">
-        <div class="social-bar-content" onclick="socialBarClick()">
-            💬 ÚNETE AL GRUPO VIP - Chismes EXCLUSIVOS 24/7
-        </div>
-    </div>
-
-    <!-- JavaScript for Maximum Engagement -->
-    <script>
-        // Engagement tracking
-        let userEngagement = 0;
-        let popunderTriggered = false;
-        let contentUnlocked = false;
-
-        // Vote function for polls
-        function triggerVote(option) {
-            userEngagement += 3; // High value action
-            console.log(🗳 Poll vote: ${option} (Engagement: ${userEngagement}));
-            
-            if (!popunderTriggered) {
-                triggerPopunder();
-                popunderTriggered = true;
-            }
-            
-            // Visual feedback
-            const button = event.target;
-            button.style.background = 'white';
-            button.style.color = '#e91e63';
-            button.innerHTML = '✅ ' + button.innerHTML;
-            
-            setTimeout(() => {
-                showVoteResults(option);
-            }, 800);
-        }
-
-        function showVoteResults(option) {
-            const results = {
-                'shakira': 'Shakira vs Piqué ARRASA con 67% de los votos',
-                'anuel': 'Anuel AA causa controversia con 23% de apoyo',
-                'jbalvin': 'J Balvin decepciona con solo 15% de votos',
-                'karol': 'Karol G sorprende con 45% de popularidad'
-            };
-            
-            alert(🎉 RESULTADOS EXCLUSIVOS:\n\n${results[option]}\n\n💎 Únete a nuestro grupo VIP para más encuestas exclusivas);
-        }
-
-        // Unlock censored content
-        function unlockCensored() {
-            userEngagement += 5; // Maximum value action
-            console.log(🔓 Censored content unlocked (Engagement: ${userEngagement}));
-            
-            if (!popunderTriggered) {
-                triggerPopunder();
-                popunderTriggered = true;
-            }
-            
-            const gate = document.querySelector('.content-gate');
-            gate.innerHTML = `
-                <h2 style="color: #28a745; margin-bottom: 20px;">✅ CONTENIDO DESBLOQUEADO</h2>
-                <div style="background: linear-gradient(45deg, #28a745, #20c997); color: white; padding: 30px; border-radius: 15px; margin: 20px 0;">
-                    <h3>🔥 FOTOS EXCLUSIVAS CARGANDO...</h3>
-                    <p>Por políticas de contenido, las imágenes se envían por mensaje privado</p>
-                    <div class="native-ad" style="background: rgba(255,255,255,0.2); margin-top: 15px;">
-                        📱 DESCARGA NUESTRA APP para ver contenido sin censura
-                    </div>
-                </div>
-                <p style="color: #666; font-style: italic;">Revisa tu WhatsApp en los próximos 5 minutos 📱</p>
-            `;
-            
-            contentUnlocked = true;
-        }
-
-        // Celebrity click tracking
-        function triggerCelebClick(celeb) {
-            userEngagement += 2;
-            console.log(⭐ Celebrity clicked: ${celeb} (Engagement: ${userEngagement}));
-            
-            if (userEngagement >= 3 && !popunderTriggered) {
-                triggerPopunder();
-                popunderTriggered = true;
-            }
-            
-            const celebNames = {
-                'shakira': 'Shakira',
-                'badrunny': 'Bad Bunny',
-                'karol': 'Karol G',
-                'anitta': 'Anitta'
-            };
-            
-            alert(🔥 CARGANDO perfil exclusivo de ${celebNames[celeb] || 'la celebridad'}...\n\n💎 Contenido VIP disponible en nuestra app);
-        }
-
-        // Quick polls
-        function quickPoll(type) {
-            userEngagement += 2;
-            console.log(📊 Quick poll: ${type} (Engagement: ${userEngagement}));
-            
-            if (!popunderTriggered && userEngagement >= 2) {
-                triggerPopunder();
-                popunderTriggered = true;
-            }
-            
-            if (type === 'team') {
-                alert('🗳 VOTA:\n\n🔥 Team Shakira: 73%\n💔 Team Piqué: 27%\n\n¡Tu voto cuenta!');
-            } else {
-                alert('💕 RESULTADOS:\n\n1. Karol G & Feid\n2. Anitta & Maluma\n3. Bad Bunny & Kendall\n\n¿Estás de acuerdo?');
-            }
-        }
-
-        // Social bar interaction
-        function socialBarClick() {
-            userEngagement += 3;
-            console.log(💬 Social bar clicked (Engagement: ${userEngagement}));
-            triggerPopunder();
-            alert('🎉 ¡BIENVENIDO AL GRUPO VIP!\n\nRecibe chismes EXCLUSIVOS antes que nadie\n\n📱 Descarga nuestra app para acceso completo');
-        }
-
-        // Tab switching
-        function switchTab(tab) {
-            userEngagement += 0.5;
-            console.log(📑 Tab switched: ${tab});
-            
-            // Update active tab
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            // Simulate content change
-            setTimeout(() => {
-                alert(🔄 Cargando contenido de ${tab.toUpperCase()}...\n\n📱 Mejores chismes en nuestra app);
-            }, 300);
-        }
-
-        // Popunder trigger
-        function triggerPopunder() {
-            console.log('🚀 POPUNDER TRIGGERED - Maximum revenue event');
-            // Real Adsterra popunder code goes here
-        }
-
-        // Automatic engagement triggers
-        document.addEventListener('DOMContentLoaded', function() {
-            // Track clicks on reveal buttons
-            document.querySelectorAll('.reveal-btn').forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    userEngagement += 4; // Very high value
-                    console.log(💥 Reveal button clicked (Engagement: ${userEngagement}));
-                    
-                    if (!popunderTriggered) {
-                        triggerPopunder();
-                        popunderTriggered = true;
-                    }
-                    
-                    const headlines = [
-                        '🔥 EXCLUSIVA: Más detalles en nuestra app VIP',
-                        '💣 BOMBA: Contenido completo solo para suscriptores',
-                        '⚡ SHOCK: Descarga la app para ver TODO'
-                    ];
-                    
-                    alert(headlines[Math.floor(Math.random() * headlines.length)]);
-                });
-            });
-
-            // Auto-trigger breaking news
-            setTimeout(() => {
-                showBreakingPopup();
-            }, 12000); // After 12 seconds
-
-            // Scroll tracking
-            let maxScroll = 0;
-            window.addEventListener('scroll', () => {
-                const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-                if (scrollPercent > maxScroll) {
-                    maxScroll = scrollPercent;
-                    if (maxScroll > 60) {
-                        userEngagement += 1;
-                        console.log(📜 Deep scroll: ${maxScroll}%);
-                    }
-                }
-            });
-
-            // Time tracking
-            let timeOnSite = 0;
-            setInterval(() => {
-                timeOnSite++;
-                if (timeOnSite % 20 === 0) { // Every 20 seconds
-                    userEngagement += 0.5;
-                    console.log(⏱ Time bonus: ${timeOnSite}s);
-                }
-            }, 1000);
-        });
-
-        // Breaking news popup
-        function showBreakingPopup() {
-            const popup = document.createElement('div');
-            popup.style.cssText = `
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: linear-gradient(45deg, #ff1744, #ff4569);
-                color: white;
-                padding: 30px;
-                border-radius: 20px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                z-index: 99999;
-                max-width: 400px;
-                text-align: center;
-                animation: popupSlide 0.5s ease;
-            `;
-            
-            popup.innerHTML = `
-                <h3 style="margin-bottom: 15px; font-size: 1.4rem;">🚨 NOTICIA DE ÚLTIMA HORA</h3>
-                <p style="margin-bottom: 20px;">Famosa cantante latina hospitalizada de emergencia. Los detalles te van a IMPACTAR.</p>
-                <button onclick="urgentNewsClick()" style="background: white; color: #ff1744; border: none; padding: 12px 25px; border-radius: 25px; font-weight: bold; cursor: pointer;">
-                    VER DETALLES URGENTES
-                </button>
-                <button onclick="closePopup()" style="background: transparent; color: white; border: 1px solid white; padding: 8px 15px; border-radius: 20px; margin-left: 10px; cursor: pointer;">
-                    Cerrar
-                </button>
-            `;
-            
-            popup.id = 'breakingPopup';
-            document.body.appendChild(popup);
-            
-            // Auto close after 15 seconds
-            setTimeout(() => {
-                if (document.getElementById('breakingPopup')) {
-                    closePopup();
-                }
-            }, 15000);
-        }
-
-        function urgentNewsClick() {
-            userEngagement += 5; // Maximum engagement
-            console.log('🚨 URGENT NEWS CLICKED - Premium revenue event');
-            triggerPopunder();
-            closePopup();
-            alert('💥 EXCLUSIVA COMPLETA en nuestra app\n\n📱 Descarga GRATIS para ver el video completo');
-        }
-
-        function closePopup() {
-            const popup = document.getElementById('breakingPopup');
-            if (popup) {
-                popup.remove();
-            }
-        }
-
-        // CSS for popup animation
-        const popupStyle = document.createElement('style');
-        popupStyle.textContent = `
-            @keyframes popupSlide {
-                from { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
-                to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-            }
-        `;
-        document.head.appendChild(popupStyle);
-    </script>
-</body>
-</html>
+            <div class
